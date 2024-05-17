@@ -1,10 +1,13 @@
-import Header from "@/components/Header/Header";
-import Image from "next/image";
+import Header from "@/components/Header";
+import MainSection from "@/components/MainSection";
+import Footer from "@/components/Footer";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="w-2/3 mx-auto bg-cover bg-center relative ">
+    <div>
       <Header />
+      <MainSection />
+      {/* <Footer /> */}
     </div>
   );
 }

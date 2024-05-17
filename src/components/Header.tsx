@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Header() {
   return (
-    <div className="p-5 flex justify-between align-middle">
+    <div className="p-5 flex justify-between align-middle w-9/10 mx-auto">
       <Link
         href="/"
         className="text-3xl"

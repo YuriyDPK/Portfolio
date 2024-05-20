@@ -10,9 +10,13 @@ export default function MainSection() {
   const textRef = useRef<HTMLParagraphElement>(null);
   const [hoveringLink, setHoveringLink] = useState<string | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleMouseEnter = (link: string) => () => setHoveringLink(link);
   const handleMouseLeave = () => setHoveringLink(null);
+
+  const handleModalOpen = () => setIsModalOpen(true);
+  const handleModalClose = () => setIsModalOpen(false);
 
   useEffect(() => {
     setIsLoaded(true);
@@ -38,7 +42,7 @@ export default function MainSection() {
 
   return (
     <main className="relative h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full">
+      <div className="absolute bottom-0 left-0 smartphone:w-full smartphone:h-full w-150 h-150 ">
         <Image
           src="/img/bg.png"
           alt="Background"
@@ -55,7 +59,10 @@ export default function MainSection() {
           }
         )}
       >
-        <div className="relative w-[1100px] h-[1100px] mx-auto" ref={personRef}>
+        <div
+          className="desktop3:absolute desktop3:w-[1300px] desktop3:h-[1300px] desktop3:bottom-0 desktop2:w-[1100px] desktop2:h-[1100px] desktop:w-[1000px] desktop:h-[1000px] laptop:w-[900px] laptop:h-[900px] tablet:w-[850px] tablet:h-[850px] smartphone:w-[750px] smartphone:h-[750px] w-[750px] h-[750px] absolute bottom-minus_seventeen left-minus_tritdteen smartphone:left-auto "
+          ref={personRef}
+        >
           <Image
             src="/img/image.svg"
             alt="Person"
@@ -63,14 +70,20 @@ export default function MainSection() {
             objectFit="contain"
           />
         </div>
+        <button
+          className="absoulte block smartphone:hidden mx-auto mt-200 py-1 px-5 text-xxl border border-black rounded-lg font-medium"
+          onClick={handleModalOpen}
+        >
+          Мои соц.сети
+        </button>
         <h1
-          className="text-xxx absolute left-0 top-10 font-light"
+          className="smartphone:text-xxx absolute smartphone:left-0 smartphone:top-10 font-light hover:text-gray-800 text-xxxsm right-8/10 bottom-30"
           ref={firstRef}
         >
           01
         </h1>
         <p
-          className="text-xxo mt-4 absolute right-5 bottom-30 w-1/4 text-left tracking-tight leading-tight"
+          className="smartphone:text-xxo mt-4 absolute smartphone:right-5 smartphone:bottom-30 smartphone:w-1/4 smartphone:text-left tracking-tight leading-tight hover:text-gray-800 w-full text-center text-xxlg top-0 smartphone:top-auto"
           style={{ fontFamily: "Roboto Flex", fontWeight: 400 }}
           ref={textRef}
         >
@@ -79,7 +92,7 @@ export default function MainSection() {
       </div>
       <div
         className={clsx(
-          "absolute bottom-0 left-20 p-4 hover:text-yellow-700 text-l w-half_past transition-transform duration-1000 ease-out",
+          "absolute smartphone:bottom-0 top-35 smartphone:top-auto smartphone:left-20 left-0 smartphone:p-4 p-0 text-center smartphone:text-left hover:text-yellow-700 smartphone:text-xl text-xxm smartphone:w-half_past w-full transition-transform duration-1000 ease-out ",
           {
             "translate-y-full opacity-0": !isLoaded,
             "translate-y-0 opacity-100": isLoaded,
@@ -90,7 +103,7 @@ export default function MainSection() {
       </div>
       <div
         className={clsx(
-          "absolute top-50 left-20 center border h-7/10 border-black transition-transform duration-1000 ease-out",
+          "absolute top-50 left-20 center border h-7/10 border-black transition-transform duration-1000 ease-out laptop:block hidden",
           {
             "translate-y-full opacity-0": !isLoaded,
             "translate-y-0 opacity-100": isLoaded,
@@ -106,7 +119,7 @@ export default function MainSection() {
           }
         )}
       >
-        <div className="flex flex-col items-center space-y-4">
+        <div className="smartphone:flex flex-col items-center space-y-4 hidden">
           {["vk", "inst", "tg"].map((link) => (
             <Link
               key={link}
@@ -127,14 +140,14 @@ export default function MainSection() {
       </div>
       <div
         className={clsx(
-          "absolute bottom-0 right-20 p-4 center transition-transform duration-1000 ease-out",
+          "absolute smartphone:bottom-0 top-10 smartphone:top-auto smartphone:right-20 right-0 p-4 center transition-transform duration-1000 ease-out smartphone:w-auto w-full",
           {
             "translate-y-full opacity-0": !isLoaded,
             "translate-y-0 opacity-100": isLoaded,
           }
         )}
       >
-        <div className="flex items-center align-middle justify-center gap-10">
+        <div className="flex items-center align-middle justify-center smartphone:gap-10 gap-7/10">
           {["back", "next"].map((link) => (
             <Link
               key={link}
@@ -153,6 +166,31 @@ export default function MainSection() {
           ))}
         </div>
       </div>
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 ">
+          <div className="bg-white p-8 rounded-smartphone shadow-smartphone">
+            <h2 className="text-2xl mb-4 text-center">Мои соц.сети</h2>
+            <div className="flex space-x-4">
+              {["vk", "inst", "tg"].map((link) => (
+                <Link key={link} href="#">
+                  <Image
+                    src={`/img/${link}.svg`}
+                    alt={link}
+                    width={50}
+                    height={50}
+                  />
+                </Link>
+              ))}
+            </div>
+            <button
+              className="mt-4 py-2 px-4 bg-red-500 text-white rounded-smartphone w-full"
+              onClick={handleModalClose}
+            >
+              Закрыть
+            </button>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

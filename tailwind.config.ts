@@ -19,15 +19,39 @@ const config: Config = {
         "60": "60%",
         "40": "40%",
         "30": "30%",
+        "35": "35%",
         "128": "32rem",
         "144": "36rem",
         "100": "25rem",
+        "150": "450px",
+        minus_ten: "-10rem",
+        minus_eight: "-8rem",
+        minus_seventeen: "-17rem",
+        minus_tritdteen: "-13rem",
+        "200": "200px",
+      },
+      screens: {
+        smartphone: "500px",
+
+        tablet: "640px",
+
+        laptop: "1024px",
+
+        desktop: "1280px",
+
+        desktop2: "1500px",
+
+        desktop3: "2200px",
       },
       fontSize: {
         xxs: "0.625rem", // 10px
+        xxm: "1.45rem",
         xxl: "1.75rem", // 28px
+        xxlg: "2.2rem", //
         xxx: "16rem",
+        xxxsm: "9rem",
         xxo: "2.5rem",
+        xxolg: "4rem",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

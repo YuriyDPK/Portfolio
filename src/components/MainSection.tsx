@@ -6,8 +6,9 @@ import clsx from "clsx"; // Используется для условного �
 
 export default function MainSection() {
   const personRef = useRef<HTMLDivElement>(null);
-  const firstRef = useRef<HTMLHeadingElement>(null);
-  const textRef = useRef<HTMLParagraphElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
+  // const firstRef = useRef<HTMLHeadingElement>(null);
+  // const textRef = useRef<HTMLParagraphElement>(null);
   const [hoveringLink, setHoveringLink] = useState<string | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,14 +23,17 @@ export default function MainSection() {
     setIsLoaded(true);
 
     const handleMouseMove = (event: MouseEvent<HTMLDivElement>) => {
-      if (personRef.current && firstRef.current && textRef.current) {
+      if (personRef.current && bgRef.current) {
         const { clientX, clientY } = event;
         const { innerWidth, innerHeight } = window;
         const xOffset = (clientX - innerWidth / 2) * 0.02;
         const yOffset = (clientY - innerHeight / 2) * 0.02;
+        const xOffsetBg = (clientX - innerWidth / 2) * 0.01;
+        const yOffsetBg = (clientY - innerHeight / 2) * 0.01;
         personRef.current.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
-        firstRef.current.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
-        textRef.current.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+        // firstRef.current.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+        // textRef.current.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+        bgRef.current.style.transform = `translate(-${xOffsetBg}px, -${yOffsetBg}px)`;
       }
     };
 
@@ -42,7 +46,10 @@ export default function MainSection() {
 
   return (
     <main className="relative h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute bottom-0 left-0 smartphone:w-full smartphone:h-full w-150 h-150 ">
+      <div
+        ref={bgRef}
+        className="absolute bottom-0 left-auto desktop3:w-full desktop3:h-full desktop2:w-full desktop2:h-full desktop:w-9/10 desktop:h-9/10 laptop:w-8/10 laptop:h-8/10 tablet:w-7/10 tablet:h-7/10 w-150 h-150"
+      >
         <Image
           src="/img/bg.png"
           alt="Background"
@@ -60,11 +67,11 @@ export default function MainSection() {
         )}
       >
         <div
-          className="desktop3:absolute desktop3:w-[1300px] desktop3:h-[1300px] desktop3:bottom-0 desktop2:w-[1100px] desktop2:h-[1100px] desktop:w-[1000px] desktop:h-[1000px] laptop:w-[900px] laptop:h-[900px] tablet:w-[850px] tablet:h-[850px] smartphone:w-[750px] smartphone:h-[750px] w-[750px] h-[750px] absolute bottom-minus_seventeen left-minus_tritdteen smartphone:left-auto "
+          className=" desktop3:absolute desktop3:w-[1300px] desktop3:h-[1300px] desktop3:bottom-0 desktop2:w-[1100px] desktop2:h-[1100px]  desktop:w-[1000px] desktop:h-[1000px] laptop:w-[900px] laptop:h-[900px] tablet:w-[850px] tablet:h-[850px] smartphone:w-[750px] smartphone:h-[750px] w-[750px] h-[750px] absolute desktop3:left-minus_tritdteen desktop2:left-minus-five desktop:left-0 laptop:left-minus-ten tablet:left-minus_eight left-0 bottom-minus_seventeen smartphone_mini:left-minus_tritdteen "
           ref={personRef}
         >
           <Image
-            src="/img/image.svg"
+            src="/img/imge.svg"
             alt="Person"
             layout="fill"
             objectFit="contain"
@@ -77,22 +84,22 @@ export default function MainSection() {
           Мои соц.сети
         </button>
         <h1
-          className="smartphone:text-xxx absolute smartphone:left-0 smartphone:top-10 font-light hover:text-gray-800 text-xxxsm right-8/10 bottom-30"
-          ref={firstRef}
+          className="right-8/10 bottom-30 desktop:left-0 desktop:top-10 text-xxxsm smartphone:text-xxx_9 laptop:text-xxx_10 desktop:text-xxx_12 desktop2:text-xxx_13 absolute  font-light hover:text-gray-800 "
+          // ref={firstRef}
         >
           01
         </h1>
         <p
-          className="smartphone:text-xxo mt-4 absolute smartphone:right-5 smartphone:bottom-30 smartphone:w-1/4 smartphone:text-left tracking-tight leading-tight hover:text-gray-800 w-full text-center text-xxlg top-0 smartphone:top-auto"
+          className="smartphone:text-xxo mt-4 absolute laptop:right-5 smartphone:bottom-auto smartphone:text-center smartphone:top-20 tablet:w-full desktop:w-1/4 desktop:bottom-30 desktop:text-left desktop:top-auto tracking-tight leading-tight hover:text-gray-800 w-full text-center text-xxlg top-0"
           style={{ fontFamily: "Roboto Flex", fontWeight: 400 }}
-          ref={textRef}
+          // ref={textRef}
         >
           Совмещаю ваши идеи и свои возможности
         </p>
       </div>
       <div
         className={clsx(
-          "absolute smartphone:bottom-0 top-35 smartphone:top-auto smartphone:left-20 left-0 smartphone:p-4 p-0 text-center smartphone:text-left hover:text-yellow-700 smartphone:text-xl text-xxm smartphone:w-half_past w-full transition-transform duration-1000 ease-out ",
+          "absolute laptop:bottom-0 top-35 smartphone:top-30 desktop:top-auto desktop:left-20 left-0 smartphone:p-4 p-0 text-center desktop:text-left hover:text-yellow-700 smartphone:text-xl text-xxm desktop:w-half_past w-full transition-transform duration-1000 ease-out ",
           {
             "translate-y-full opacity-0": !isLoaded,
             "translate-y-0 opacity-100": isLoaded,
@@ -112,14 +119,14 @@ export default function MainSection() {
       ></div>
       <div
         className={clsx(
-          "absolute top-50 right-20 p-4 center transition-transform duration-1000 ease-out",
+          "absolute desktop:top-1/3 desktop:right-20 smartphone:right-auto smartphone:top-0 p-4 center transition-transform duration-1000 ease-out",
           {
             "translate-y-full opacity-0": !isLoaded,
             "translate-y-0 opacity-100": isLoaded,
           }
         )}
       >
-        <div className="smartphone:flex flex-col items-center space-y-4 hidden">
+        <div className="hidden smartphone:flex laptop:flex-row desktop:flex-col desktop:items-start items-baseline space-y-4 space-x-1 ">
           {["vk", "inst", "tg"].map((link) => (
             <Link
               key={link}
@@ -140,14 +147,15 @@ export default function MainSection() {
       </div>
       <div
         className={clsx(
-          "absolute smartphone:bottom-0 top-10 smartphone:top-auto smartphone:right-20 right-0 p-4 center transition-transform duration-1000 ease-out smartphone:w-auto w-full",
+          "absolute desktop:bottom-0 top-10 desktop:top-auto desktop:right-20 right-0 p-4 center transition-transform duration-1000 ease-out desktop:w-auto w-full ",
+
           {
             "translate-y-full opacity-0": !isLoaded,
             "translate-y-0 opacity-100": isLoaded,
           }
         )}
       >
-        <div className="flex items-center align-middle justify-center smartphone:gap-10 gap-7/10">
+        <div className="flex items-center align-middle justify-center desktop:gap-10 gap-7/10">
           {["back", "next"].map((link) => (
             <Link
               key={link}

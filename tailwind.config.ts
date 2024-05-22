@@ -25,12 +25,19 @@ const config: Config = {
         "100": "25rem",
         "150": "450px",
         minus_ten: "-10rem",
+        minus_twelve: "-12rem",
+        minus_five: "-5rem",
+        minus_three: "-3rem",
+        minus_one: "-1rem",
         minus_eight: "-8rem",
+        minus_nine: "-9rem",
         minus_seventeen: "-17rem",
         minus_tritdteen: "-13rem",
         "200": "200px",
       },
       screens: {
+        smartphone_mini: "300px",
+
         smartphone: "500px",
 
         tablet: "640px",
@@ -41,7 +48,7 @@ const config: Config = {
 
         desktop2: "1500px",
 
-        desktop3: "2200px",
+        desktop3: "2300px",
       },
       fontSize: {
         xxs: "0.625rem", // 10px
@@ -49,7 +56,14 @@ const config: Config = {
         xxl: "1.75rem", // 28px
         xxlg: "2.2rem", //
         xxx: "16rem",
+        xxx_15: "15rem",
+        xxx_14: "14rem",
+        xxx_13: "13rem",
+        xxx_12: "12rem",
+        xxx_10: "10rem",
         xxxsm: "9rem",
+        xxx_8: "8rem",
+        xxx_7: "7rem",
         xxo: "2.5rem",
         xxolg: "4rem",
       },

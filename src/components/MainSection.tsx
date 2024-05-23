@@ -6,9 +6,7 @@ import clsx from "clsx"; // Используется для условного �
 
 export default function MainSection() {
   const personRef = useRef<HTMLDivElement>(null);
-  const bgRef = useRef<HTMLDivElement>(null);
-  // const firstRef = useRef<HTMLHeadingElement>(null);
-  // const textRef = useRef<HTMLParagraphElement>(null);
+
   const [hoveringLink, setHoveringLink] = useState<string | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -23,17 +21,13 @@ export default function MainSection() {
     setIsLoaded(true);
 
     const handleMouseMove = (event: MouseEvent<HTMLDivElement>) => {
-      if (personRef.current && bgRef.current) {
+      if (personRef.current) {
         const { clientX, clientY } = event;
         const { innerWidth, innerHeight } = window;
         const xOffset = (clientX - innerWidth / 2) * 0.02;
         const yOffset = (clientY - innerHeight / 2) * 0.02;
-        const xOffsetBg = (clientX - innerWidth / 2) * 0.01;
-        const yOffsetBg = (clientY - innerHeight / 2) * 0.01;
+
         personRef.current.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
-        // firstRef.current.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
-        // textRef.current.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
-        bgRef.current.style.transform = `translate(-${xOffsetBg}px, -${yOffsetBg}px)`;
       }
     };
 
@@ -46,10 +40,7 @@ export default function MainSection() {
 
   return (
     <main className="relative h-screen flex items-center justify-center overflow-hidden">
-      <div
-        ref={bgRef}
-        className="absolute bottom-0 left-auto desktop3:w-full desktop3:h-full desktop2:w-full desktop2:h-full desktop:w-9/10 desktop:h-9/10 laptop:w-8/10 laptop:h-8/10 tablet:w-7/10 tablet:h-7/10 w-150 h-150"
-      >
+      <div className="absolute bottom-0 left-auto desktop3:w-full desktop3:h-full desktop2:w-full desktop2:h-full desktop:w-9/10 desktop:h-9/10 laptop:w-8/10 laptop:h-8/10 tablet:w-7/10 tablet:h-7/10 w-150 h-150">
         <Image
           src="/img/bg.png"
           alt="Background"

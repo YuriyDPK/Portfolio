@@ -27,7 +27,7 @@ export default function Header() {
           Главная
         </Link>
         <Link
-          href="/"
+          href="/portfolio"
           className="text-2xl hover:text-yellow-600"
           style={{ fontFamily: "Roboto Flex", fontWeight: 100 }}
         >

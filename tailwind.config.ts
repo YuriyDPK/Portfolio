@@ -66,6 +66,7 @@ const config: Config = {
         xxx_7: "7rem",
         xxo: "2.5rem",
         xxolg: "4rem",
+        xxolg2: "3.5rem",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

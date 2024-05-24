@@ -37,7 +37,7 @@ export default function Portfolio() {
 
   return (
     <main className="relative h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute top-5 right-[10em] left-auto desktop3:w-[300px] desktop3:h-[300px] desktop2:w-[300px] desktop2:h-[300px] desktop:w-9/10 desktop:h-9/10 laptop:w-8/10 laptop:h-8/10 tablet:w-7/10 tablet:h-7/10 w-150 h-150">
+      <div className="absolute top-0 desktop2:top-5 right-0 desktop2:right-[10em] left-auto desktop3:w-[300px] desktop3:h-[300px] desktop2:w-[300px] desktop2:h-[300px] desktop:w-[300px] desktop:h-[300px] laptop:w-[300px] laptop:h-[300px] tablet:w-[300px] tablet:h-[300px] w-[300px] h-[300px]">
         <Image
           src="/img/bg.png"
           alt="Background"
@@ -120,16 +120,16 @@ export default function Portfolio() {
           </div>
         </div>
 
-        <h1 className="left-minus_eight desktop:top-10 text-xxolg smartphone:text-xxolg laptop:text-xxolg desktop:text-xxolg desktop2:text-xxx_8 absolute font-light hover:text-gray-800">
+        <h1 className="left-minus_three tablet:left-minus_eight top-20 text-xxolg smartphone:text-xxolg laptop:text-xxolg desktop:text-xxolg desktop2:text-xxx_8 absolute font-light hover:text-gray-800">
           02
         </h1>
-        <h2 className="right-minus_eight desktop:top-20 text-xxolg smartphone:text-xxolg laptop:text-xxolg desktop:text-xxolg desktop2:text-xxolg absolute font-light hover:text-gray-800">
+        <h2 className=" right-minus_five tablet:right-minus_eight top-20 text-xxolg2 smartphone:text-xxolg2 laptop:text-xxolg desktop:text-xxolg desktop2:text-xxolg absolute font-light hover:text-gray-800">
           Портфолио
         </h2>
       </div>
       <div
         className={clsx(
-          "absolute laptop:bottom-0 top-35 smartphone:top-30 desktop:top-auto desktop:left-20 left-0 smartphone:p-4 p-0 text-center desktop:text-left hover:text-yellow-700 smartphone:text-xl text-xxm desktop:w-half_past w-full transition-transform duration-1000 ease-out ",
+          "absolute  bottom-0   desktop:left-20 left-0 smartphone:p-4 p-0 text-center desktop:text-left hover:text-yellow-700 smartphone:text-xl text-xxm desktop:w-half_past w-full transition-transform duration-1000 ease-out ",
           {
             "translate-y-full opacity-0": !isLoaded,
             "translate-y-0 opacity-100": isLoaded,
@@ -160,7 +160,7 @@ export default function Portfolio() {
 
       <div
         className={clsx(
-          "absolute desktop:bottom-0 top-10 desktop:top-auto desktop:right-20 right-0 p-4 center transition-transform duration-1000 ease-out desktop:w-auto w-full ",
+          "absolute bottom-20 laptop:bottom-0  desktop:right-20 right-0 p-4 center transition-transform duration-1000 ease-out desktop:w-auto w-full ",
           {
             "translate-y-full opacity-0": !isLoaded,
             "translate-y-0 opacity-100": isLoaded,

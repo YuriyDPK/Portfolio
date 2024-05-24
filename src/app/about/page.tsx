@@ -1,9 +1,9 @@
-import Portfolio from "@/components/Portfolio";
+import About from "@/components/About";
 
 export default function AboutPage() {
   return (
     <div>
-      <Portfolio />
+      <About />
     </div>
   );
 }

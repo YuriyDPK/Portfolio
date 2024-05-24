@@ -52,6 +52,7 @@ const config: Config = {
       },
       fontSize: {
         xxs: "0.625rem", // 10px
+        xxm2: "1.3rem",
         xxm: "1.45rem",
         xxl: "1.75rem", // 28px
         xxlg: "2.2rem", //

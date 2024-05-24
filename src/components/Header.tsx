@@ -34,14 +34,14 @@ export default function Header() {
           Работы
         </Link>
         <Link
-          href="/"
+          href="/market"
           className="text-2xl hover:text-yellow-600"
           style={{ fontFamily: "Roboto Flex", fontWeight: 100 }}
         >
           Магазин
         </Link>
         <Link
-          href="/"
+          href="/about"
           className="text-2xl hover:text-yellow-600"
           style={{ fontFamily: "Roboto Flex", fontWeight: 100 }}
         >

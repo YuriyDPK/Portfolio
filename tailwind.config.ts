@@ -14,6 +14,7 @@ const config: Config = {
         half_past: "20%",
         "55": "55%",
         "7/10": "70%",
+        "75/100": "75%",
         "8/10": "80%",
         "9/10": "90%",
         "60": "60%",
@@ -34,6 +35,9 @@ const config: Config = {
         minus_seventeen: "-17rem",
         minus_tritdteen: "-13rem",
         "200": "200px",
+        hundred: "130px",
+        hundred_half: "170px",
+        six: "8rem",
       },
       screens: {
         smartphone_mini: "300px",

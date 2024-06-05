@@ -74,7 +74,7 @@ export default function Header() {
               Главная
             </Link>
             <Link
-              href="/"
+              href="/portfolio"
               className="text-2xl text-white hover:text-yellow-600"
               onClick={toggleMenu}
               style={{ fontFamily: "Roboto Flex", fontWeight: 100 }}
@@ -82,7 +82,7 @@ export default function Header() {
               Работы
             </Link>
             <Link
-              href="/"
+              href="/market"
               className="text-2xl text-white hover:text-yellow-600"
               onClick={toggleMenu}
               style={{ fontFamily: "Roboto Flex", fontWeight: 100 }}
@@ -90,7 +90,7 @@ export default function Header() {
               Магазин
             </Link>
             <Link
-              href="/"
+              href="/about"
               className="text-2xl text-white hover:text-yellow-600"
               onClick={toggleMenu}
               style={{ fontFamily: "Roboto Flex", fontWeight: 100 }}

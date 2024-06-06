@@ -16,7 +16,7 @@ export default function Market() {
   }, []);
 
   return (
-    <main className="relative min-h-screen flex justify-center overflow-hidden">
+    <main className="relative flex justify-center">
       <div className="absolute top-0 desktop2:top-5 right-0 desktop2:right-[10em] left-auto desktop3:w-[300px] desktop3:h-[300px] desktop2:w-[300px] desktop2:h-[300px] desktop:w-[300px] desktop:h-[300px] laptop:w-[300px] laptop:h-[300px] tablet:w-[300px] tablet:h-[300px] w-[300px] h-[300px]">
         <Image
           src="/img/bg.png"
@@ -40,7 +40,7 @@ export default function Market() {
         <h2 className=" right-0 tablet:right-minus_eight top-0 smartphone:top-20 text-[2.5em] smartphone:text-[3em] laptop:text-xxolg desktop:text-xxolg desktop2:text-xxolg absolute font-light hover:text-gray-800">
           Обо мне
         </h2>
-        <div className="w-full">
+        <div className="w-full flex justify-center align-top">
           <div
             className={clsx(
               "mt-1/4 tablet:mt-1/4 w-full desktop2:w-2/3 flex justify-center flex-col bg-white border rounded-lg p-6 transition-transform duration-1000 ease-out",
@@ -82,7 +82,7 @@ export default function Market() {
       </div>
       <div
         className={clsx(
-          "absolute bottom-0 desktop:left-20 left-0 smartphone:p-4 p-0 text-center desktop:text-left hover:text-yellow-700 text-[.9em] smartphone:text-xl tablet:text-xxm desktop:w-half_past w-full transition-transform duration-1000 ease-out ",
+          "absolute bottom-minus_eight desktop:left-20 left-0 smartphone:p-4 p-0 text-center desktop:text-left hover:text-yellow-700 text-[.9em] smartphone:text-xl tablet:text-xxm desktop:w-half_past w-full transition-transform duration-1000 ease-out ",
           {
             "translate-y-full opacity-0": !isLoaded,
             "translate-y-0 opacity-100": isLoaded,
@@ -104,7 +104,7 @@ export default function Market() {
 
       <div
         className={clsx(
-          "absolute bottom-0 laptop:bottom-0  desktop:right-20 right-0 p-4 center transition-transform duration-1000 ease-out desktop:w-auto w-full ",
+          "absolute bottom-minus_five  desktop:right-20 right-0 p-4 center transition-transform duration-1000 ease-out desktop:w-auto w-full ",
           {
             "translate-y-full opacity-0": !isLoaded,
             "translate-y-0 opacity-100": isLoaded,

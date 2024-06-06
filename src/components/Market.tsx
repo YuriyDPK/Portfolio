@@ -34,7 +34,7 @@ export default function Market() {
           }
         )}
       >
-        <h1 className="left-0 tablet:left-minus_eight top-0  tablet:top-0 laptop:top-0 text-[4em] smartphone:text-xxolg laptop:text-xxolg desktop:text-xxolg desktop2:text-xxx_8 absolute font-light hover:text-gray-800">
+        <h1 className="left-0 tablet:left-minus_eight top-0 tablet:top-0 laptop:top-0 text-[4em] smartphone:text-xxolg laptop:text-xxolg desktop:text-xxolg desktop2:text-xxx_8 absolute font-light hover:text-gray-800">
           03
         </h1>
         <h2 className=" right-0 tablet:right-minus_eight top-5 tablet:top-10 desktop:top-20 text-[2.5em] smartphone:text-[3em] laptop:text-xxolg desktop:text-xxolg desktop2:text-xxolg absolute font-light hover:text-gray-800">

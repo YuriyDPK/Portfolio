@@ -3,6 +3,8 @@ import Link from "next/link";
 import { useState, useEffect, useRef, MouseEvent } from "react";
 import Image from "next/image";
 import clsx from "clsx"; // Used for conditional class additions
+import js from "../../public/js.svg";
+const images = [js, js, js, js, js, js]; // замените на пути к вашим изображениям
 
 export default function Market() {
   const [hoveringLink, setHoveringLink] = useState<string | null>(null);
@@ -50,30 +52,27 @@ export default function Market() {
               }
             )}
           >
-            <h3 className="text-[.9em] smartphone:text-[1em] tablet:[text:1.3em] laptop:text-[1.5em] desktop:[1.6em] text-left font-semibold mb-4">
-              Добро пожаловать на мой сайт! Меня зовут Юрий, и я вижу в
-              веб-программировании и дизайне не только профессию, но и
-              искусство. Я стремлюсь создавать уникальные и инновационные
-              веб-решения, которые не только эстетически приятны, но и
-              функциональны. Моя страсть к технологиям и креативному процессу
-              позволяет мне воплощать ваши идеи в реальность, обеспечивая при
-              этом высокий уровень профессионализма и качества. Я постоянно
-              совершенствую свои навыки и следую последним тенденциям в
-              веб-разработке и дизайне, чтобы обеспечить моим клиентам только
-              лучшие решения. Мой опыт включает в себя работу с различными
-              технологиями, такими как HTML, CSS, JavaScript, а также
-              фреймворками и библиотеками, такими как React, Vue.js и Laravel.
-              Кроме того, я имею глубокое понимание принципов дизайна и опыт
-              работы с инструментами для создания уникальных пользовательских
-              интерфейсов. Я готов взяться за любой проект, будь то создание
-              корпоративного веб-сайта, интернет-магазина или веб-приложения.
-              Свяжитесь со мной, и давайте вместе создадим что-то поистине
-              впечатляющее!
+            <h3 className="text-[.9em] smartphone:text-[1em] tablet:[text:1.3em] laptop:text-[1.5em] desktop:[1.6em] font-semibold mb-4 text-center">
+              Добро пожаловать на мой сайт! Меня зовут Юрий, и я веб-программист
             </h3>
-
+            <div className=" flex items-center justify-center w-[400px] h-[400px] circle-animation">
+              <div className=" flex items-center justify-center w-[400px] h-[400px] ">
+                {images.map((image, index) => (
+                  <div key={index} className={`block w-[100px] h-[100px] `}>
+                    <Image
+                      src={image}
+                      width={100}
+                      height={100}
+                      alt={`image-${index}`}
+                      className="rounded-[10em] object-cover "
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
             <Link
               href="/auth"
-              className="block bg-white text-black py-2 px-4 rounded mb-2 text-center hover:bg-gray-100"
+              className="block bg-yellow-100 text-black py-2 px-4 rounded mb-2 text-center hover:bg-yellow-200"
             >
               Для меня
             </Link>

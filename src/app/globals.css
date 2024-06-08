@@ -2,15 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
+@keyframes spin-desktop {
   100% {
-    transform: rotate(360deg);
+    offset-distance: 100%;
   }
 }
 
-.circle-animation {
-  animation: spin 30s linear infinite;
+@keyframes spin-mobile {
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.circle-animation-desktop {
+  offset-path: path(
+    "M194.5 2H159.5C72.5151 2 2 72.5151 2 159.5C2 246.485 72.5151 317 159.5 317H194.5C281.485 317 352 246.485 352 159.5C352 72.5151 281.485 2 194.5 2Z"
+  );
+  offset-rotate: 360deg;
+  animation: spin-desktop 30s linear infinite;
+}
+
+.circle-animation-mobile {
+  offset-path: path(
+    "M72.5 2L59.5 2C27.7436 2 2 27.7436 2 59.5C2 91.2564 27.7436 117 59.5 117L72.5 117C104.256 117 130 91.2564 130 59.5C130 27.7436 104.256 2 72.5 2Z"
+  );
+  offset-rotate: 360deg;
+  animation: spin-mobile 20s linear infinite;
 }

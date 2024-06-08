@@ -14,7 +14,10 @@ export default function Market() {
   useEffect(() => {
     setIsLoaded(true);
   }, []);
-
+  const linksArrow: { [key: string]: string } = {
+    back: "/portfolio",
+    next: "/about",
+  };
   return (
     <main className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       <div className="absolute top-0 desktop2:top-5 right-0 desktop2:right-[10em] left-auto desktop3:w-[300px] desktop3:h-[300px] desktop2:w-[300px] desktop2:h-[300px] desktop:w-[300px] desktop:h-[300px] laptop:w-[300px] laptop:h-[300px] tablet:w-[300px] tablet:h-[300px] w-[300px] h-[300px]">
@@ -107,7 +110,7 @@ export default function Market() {
 
       <div
         className={clsx(
-          "absolute bottom-10 laptop:bottom-0 desktop:right-20 right-0 p-4 center transition-transform duration-1000 ease-out desktop:w-auto w-full",
+          "absolute bottom-10 laptop:bottom-0 desktop:right-20 right-0 p-4 center transition-transform duration-1000 ease-out desktop:w-auto w-full z-10",
           {
             "translate-y-full opacity-0": !isLoaded,
             "translate-y-0 opacity-100": isLoaded,
@@ -120,24 +123,28 @@ export default function Market() {
             onMouseLeave={handleMouseLeave}
             className="text-2xl"
           >
-            <Image
-              src={`/img/back${hoveringLink === "back" ? "Hover" : ""}.svg`}
-              alt="back"
-              width={50}
-              height={50}
-            />
+            <Link key="portfolio" href="/portfolio">
+              <Image
+                src={`/img/back${hoveringLink === "back" ? "Hover" : ""}.svg`}
+                alt="back"
+                width={50}
+                height={50}
+              />
+            </Link>
           </button>
           <button
             onMouseEnter={handleMouseEnter("next")}
             onMouseLeave={handleMouseLeave}
             className="text-2xl"
           >
-            <Image
-              src={`/img/next${hoveringLink === "next" ? "Hover" : ""}.svg`}
-              alt="next"
-              width={50}
-              height={50}
-            />
+            <Link key="about" href="/about">
+              <Image
+                src={`/img/next${hoveringLink === "next" ? "Hover" : ""}.svg`}
+                alt="next"
+                width={50}
+                height={50}
+              />
+            </Link>
           </button>
         </div>
       </div>

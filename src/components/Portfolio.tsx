@@ -15,7 +15,10 @@ export default function Portfolio() {
     "/img/work2.jpg", // Duplicate for demonstration
     "/img/work3.jpg", // Duplicate for demonstration
   ];
-
+  const linksArrow: { [key: string]: string } = {
+    back: "/",
+    next: "/market",
+  };
   const handleMouseEnter = (link: string) => () => setHoveringLink(link);
   const handleMouseLeave = () => setHoveringLink(null);
 

@@ -42,6 +42,11 @@ export default function MainSection() {
     inst: "https://www.instagram.com/julprocesar/",
     tg: "https://web.telegram.org/k/#@thecleverest1",
   };
+
+  const linksArrow: { [key: string]: string } = {
+    back: "/portfolio",
+    next: "/market",
+  };
   return (
     <main className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute bottom-0 left-auto desktop3:w-full desktop3:h-full desktop2:w-full desktop2:h-full desktop:w-9/10 desktop:h-9/10 laptop:w-8/10 laptop:h-8/10 tablet:w-7/10 tablet:h-7/10 w-150 h-150">
@@ -147,10 +152,10 @@ export default function MainSection() {
         )}
       >
         <div className="flex items-center align-middle justify-center desktop:gap-10 gap-7/10">
-          {["back", "next"].map((link) => (
+          {Object.keys(linksArrow).map((link) => (
             <Link
               key={link}
-              href="#"
+              href={`${linksArrow[link]}`}
               className="text-2xl"
               onMouseEnter={handleMouseEnter(link)}
               onMouseLeave={handleMouseLeave}
